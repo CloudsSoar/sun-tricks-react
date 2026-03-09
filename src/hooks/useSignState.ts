@@ -8,7 +8,7 @@ type ISignAgreementExtraInfo = /*unresolved*/ any;
 
 export const useSignState = () => {
   const queryParams = getQueryParams();
-  const { merchantId, userRole, subMerchantId: sign_account_id } = queryParams;
+  const { merchantId, userRole, subMerchantId: _merchantId } = queryParams;
   const [loading, setIsLoading] = useState(true);
   const [errorMsg, setErrorMsg] = useState('');
   const [isError, setIsError] = useState(false);
@@ -20,7 +20,7 @@ export const useSignState = () => {
         user_role: userRole,
         provider: 'SHENGYE',
         sign_product: 'SHENGYE_QUICK_RETURN',
-        sign_account_id: sign_account_id,
+        sign_account_id: _merchantId,
       });
       const data = {
         ...res,
