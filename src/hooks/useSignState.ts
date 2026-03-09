@@ -6,7 +6,7 @@ import { jsonParse } from 'safe-json-parse-and-stringify';
 type ISignStateResponse = /*unresolved*/ any;
 type ISignAgreementExtraInfo = /*unresolved*/ any;
 
-export const useSignSate = () => {
+export const useSignState = () => {
   const queryParams = getQueryParams();
   const { merchantId, userRole, subMerchantId: sign_account_id } = queryParams;
   const [loading, setIsLoading] = useState(true);
