@@ -27,12 +27,14 @@ export const useSignSate = () => {
         info: jsonParse(res?.seller_agreement_extra_info, {}) as ISignAgreementExtraInfo,
       };
       setStateData(data);
+      setIsError(false);
+      setErrorMsg('');
       return data;
     } catch (e) {
       throw new Error((e as Error).message);
     }
   };
-  const initSignSate = async () => {
+  const initSignState = async () => {
     setIsLoading(true);
     try {
       await getSignState();
@@ -47,7 +49,7 @@ export const useSignSate = () => {
     loading,
     errorMsg,
     isError,
-    initSignSate,
+    initSignState,
     getSignState,
     stateData,
     setStateData,
